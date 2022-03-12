@@ -343,18 +343,20 @@ export default {
 </script>
 
 <style scoped>
+.user-manage {
+  overflow: auto;
+}
 .user-table {
   width: 90%;
   min-width: 900px;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .top {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
-  margin-bottom: 30px;
+  padding: 10px 0;
 }
 .block {
   text-align: center;
