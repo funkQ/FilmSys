@@ -3,7 +3,7 @@ const router = express.Router();
 const conn = require('../db/db');
 const svgCaptcha = require('svg-captcha');
 const util = require('../util/util');
-const multer = require('multer');
+const multer = require('multer');        //用于上传文件
 
 // 用户API
 let user = {};
