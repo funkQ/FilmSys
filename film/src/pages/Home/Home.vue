@@ -187,7 +187,7 @@ import { getMovieList } from "../../api/index";
 import { Indicator } from "mint-ui";
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.min.css";
-import { location } from "../../common/util/location";
+import axios from "axios";
 export default {
   name: "Home",
   data() {
@@ -219,7 +219,7 @@ export default {
       // }
     });
     window.addEventListener("scroll", this.handleScroll);
-    this.getLocation(); // 调用获取地理位置
+    this.getLocation();
   },
   methods: {
     //处理滚动
@@ -248,13 +248,11 @@ export default {
     },
     // 获取地理位置
     getLocation() {
-      let _that = this;
-      let geolocation = location.initMap("map-container"); //定位
-      AMap.event.addListener(geolocation, "complete", onComplete);
-      function onComplete(result) {
-        _that.city.splice(0, 1, result.addressComponent.city);
-        console.log(result);
-      }
+      const url =
+        "https://restapi.amap.com/v3/ip?key=982eef6c6af52a825a222428ad9de19c";
+      axios.get(url).then((res) => {
+        this.city.splice(0, 1, res.data.city);
+      });
     },
   },
 };
@@ -304,8 +302,8 @@ export default {
         font-size 0.3rem
         margin-left 0.125rem
     .date
-      width 0.6rem
-      height 0.6rem
+      width 0.8rem
+      height 0.8rem
       border 0.0125rem solid #f1f1f1
       border-radius 0.425rem
       background-color rgba(221, 39, 39, 1)
