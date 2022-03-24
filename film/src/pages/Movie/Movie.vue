@@ -1,7 +1,7 @@
 <template>
     <div id="movie">
       <div class="tab-header">
-        <span class="location">广州</span>
+        <span class="location">湛江</span>
         <span :class="['normal',{'active':isHotMovie}]" @click="optionMovieType(true)">正在热映</span>
         <span :class="['normal',{'active':!isHotMovie}]" @click="optionMovieType(false)">即将上映</span>
         <span class=" icon-search" @click="$router.push('search_movie')"></span>

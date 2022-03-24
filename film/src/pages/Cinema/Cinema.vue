@@ -2,7 +2,7 @@
     <div id="cinema">
       <div class="header">
         <div class="nav">
-          <span class="location">广州</span>
+          <span class="location">湛江</span>
           <span class="title">影院</span>
           <span class=" icon-search" @click="$router.push('search_cinema')"></span>
         </div>

@@ -294,6 +294,7 @@ export default {
       justify-content center
       align-items center
       background-color #fff
+      opacity 0.9
       .icon-search
         font-size 0.375rem
       input
