@@ -10,17 +10,26 @@
           clearable
           style="width: 100%"
         >
-          <el-button slot="append" icon="el-icon-search" @click="search">搜索</el-button>
+          <el-button slot="append" icon="el-icon-search" @click="search"
+            >搜索</el-button
+          >
         </el-input>
       </el-col>
       <el-col :span="2" :offset="1">
-        <el-button type="primary" size="small" @click="addUser">添加用户</el-button>
+        <el-button type="primary" size="small" @click="addUser"
+          >添加用户</el-button
+        >
       </el-col>
     </div>
     <!--表格-->
     <div class="user-table">
       <el-table border :data="tableData">
-        <el-table-column label="用户 ID" align="center" width="100" prop="user_id"></el-table-column>
+        <el-table-column
+          label="用户 ID"
+          align="center"
+          width="100"
+          prop="user_id"
+        ></el-table-column>
         <el-table-column
           label="用户名"
           align="center"
@@ -28,13 +37,34 @@
           show-overflow-tooltip
           prop="user_name"
         ></el-table-column>
-        <el-table-column label="性别" align="center" width="60" prop="sex"></el-table-column>
-        <el-table-column label="手机" align="center" width="120" prop="phone"></el-table-column>
-        <el-table-column label="个人签名" show-overflow-tooltip prop="sign"></el-table-column>
+        <el-table-column
+          label="性别"
+          align="center"
+          width="60"
+          prop="sex"
+        ></el-table-column>
+        <el-table-column
+          label="手机"
+          align="center"
+          width="120"
+          prop="phone"
+        ></el-table-column>
+        <el-table-column
+          label="个人签名"
+          show-overflow-tooltip
+          prop="sign"
+        ></el-table-column>
         <el-table-column align="center" width="200" label="操作">
           <template slot-scope="scope">
-            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-            <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">注销</el-button>
+            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+              >编辑</el-button
+            >
+            <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)"
+              >注销</el-button
+            >
           </template>
         </el-table-column>
       </el-table>
@@ -72,32 +102,53 @@
           <el-form-item label="头像">
             <el-col :span="16">
               <img
-                :src="userInfo.avatar?userInfo.avatar:server+'/images/avatar/monkey.png'"
+                :src="
+                  userInfo.avatar
+                    ? userInfo.avatar
+                    : server + '/images/avatar/monkey.png'
+                "
                 ref="previewImg"
                 alt
                 width="80px"
                 height="80px"
               />
-              <div style="position: relative;height: 64px">
+              <div style="position: relative; height: 64px">
                 <el-button
                   size="small"
                   type="primary"
-                  style="position: absolute;left: 0;top: 0;cursor: pointer"
-                >点击上传</el-button>
+                  style="position: absolute; left: 0; top: 0; cursor: pointer"
+                  >点击上传</el-button
+                >
                 <input
                   type="file"
                   id="file"
                   name="file"
                   ref="uploadImg"
                   accept="image/png, image/jpeg, image/gif, image/jpg"
-                  style="position: absolute;left: 0;top: 0;opacity: 0;height: 32px;width: 80px;cursor: pointer"
+                  style="
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    height: 32px;
+                    width: 80px;
+                    cursor: pointer;
+                  "
                   @change="changeImg"
                 />
                 <div
                   slot="tip"
                   class="el-upload__tip"
-                  style="position: absolute;left: 0;top: 32px;height: 32px"
-                >只能上传jpg/png文件，且不超过500kb（默认为系统头像）</div>
+                  style="
+                    position: absolute;
+                    left: 0;
+                    top: 32px;
+                    height: 32px;
+                    width: 325px;
+                  "
+                >
+                  只能上传jpg/png文件，且不超过500kb（默认为系统头像）
+                </div>
               </div>
             </el-col>
           </el-form-item>
@@ -113,7 +164,11 @@
           </el-form-item>
           <el-form-item label="性别">
             <el-col :span="16">
-              <el-select v-model="userInfo.sex" placeholder="请选择性别" style="width: 100%">
+              <el-select
+                v-model="userInfo.sex"
+                placeholder="请选择性别"
+                style="width: 100%"
+              >
                 <el-option label="男" value="男"></el-option>
                 <el-option label="女" value="女"></el-option>
               </el-select>
@@ -126,7 +181,7 @@
                 placeholder="选择日期"
                 v-model="userInfo.birthday"
                 :picker-options="pickerBirthday"
-                style="width: 100%;"
+                style="width: 100%"
               ></el-date-picker>
             </el-col>
           </el-form-item>
@@ -135,7 +190,7 @@
               <el-input
                 type="textarea"
                 v-model="userInfo.sign"
-                :autosize="{ minRows: 2, maxRows: 4}"
+                :autosize="{ minRows: 2, maxRows: 4 }"
               ></el-input>
             </el-col>
           </el-form-item>
@@ -154,7 +209,7 @@ import {
   upLoadImg,
   updateUserInfo,
   deleteUserInfo,
-  addUserInfo
+  addUserInfo,
 } from "../../../api/index";
 import { MessageBox, Message } from "element-ui";
 export default {
@@ -199,19 +254,19 @@ export default {
       searchInput: "",
       rules: {
         user_name: [
-          { required: true, message: "请输入用户名", trigger: "blur" }
+          { required: true, message: "请输入用户名", trigger: "blur" },
         ],
         phone: [
           { required: true, message: "请输入手机号码", trigger: "blur" },
-          { validator: checkPhone, trigger: "blur" }
+          { validator: checkPhone, trigger: "blur" },
         ],
-        password: [{ required: true, message: "请输入密码", trigger: "blur" }]
+        password: [{ required: true, message: "请输入密码", trigger: "blur" }],
       },
       pickerBirthday: {
         disabledDate(time) {
           return time.getTime() > Date.now();
-        }
-      }
+        },
+      },
     };
   },
   created() {
@@ -234,7 +289,7 @@ export default {
       MessageBox.confirm(
         "此操作将永久删除该用户所有信息, 是否继续？",
         "提示"
-      ).then(async value => {
+      ).then(async (value) => {
         if (value === "confirm") {
           let json = await deleteUserInfo(row.user_id);
           if (json.success_code === 200) {
@@ -253,7 +308,7 @@ export default {
       let reader = new FileReader();
       reader.readAsDataURL(this.$refs.uploadImg.files[0]); //发起异步请求
       let _this = this;
-      reader.onload = function() {
+      reader.onload = function () {
         //读取完成后，将结果赋值给img的src
         _this.$refs.previewImg.src = this.result;
         _this.userInfo.avatar = this.result;
@@ -337,8 +392,8 @@ export default {
       this.dialogTitle = "添加用户";
       this.userInfo = {};
       this.dialogFormVisible = true;
-    }
-  }
+    },
+  },
 };
 </script>
 
