@@ -187,6 +187,7 @@ export default {
                     label: formatDate(new Date(val.show_date), true),
                     date: val.show_date,
                   });
+                  // console.log(val.show_date);
                 }
                 movieInfo.push({
                   cinema_id: val.cinema_id,

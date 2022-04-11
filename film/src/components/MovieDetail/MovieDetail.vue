@@ -258,7 +258,7 @@ import { formatDate } from '../../common/util/util';
                       this.averageScore = this.averageScore.toFixed(1);
                     }
                     this.starValue = this.averageScore*0.5;
-                    console.log(currentIndex);
+                    // console.log(currentIndex);
                     if (currentIndex===-1){
                       this.currentUserCommentDate = [];
                     } else{

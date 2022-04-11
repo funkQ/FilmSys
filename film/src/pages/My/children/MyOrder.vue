@@ -111,7 +111,7 @@
         flex-flow column
         padding .3rem
         background #fff
-        border-bottom .03rem solid #f1f1f1
+        border-bottom .03rem solid #b9abab
         .item-top, .item-center,.item-bottom
           width 100%
           display flex

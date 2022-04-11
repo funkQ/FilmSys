@@ -306,7 +306,7 @@ export default {
       width 0.8rem
       height 0.8rem
       border 0.0125rem solid #f1f1f1
-      border-radius 0.425rem
+      border-radius 0.2rem
       background-color rgba(221, 39, 39, 1)
       display flex
       justify-content center
@@ -315,16 +315,16 @@ export default {
         display flex
         justify-content center
         align-items center
-        width 76%
-        height 76%
+        width 100%
+        height 100%
         background url('./images/calender/calender.svg') no-repeat
         -webkit-background-size cover
         background-size cover
         .day
           position relative
-          top 0.45em
+          top 0.4em
           color #fff
-          font-size 0.6em
+          font-size 0.9em
   .swiper-container
     width 100%
     height 3rem
