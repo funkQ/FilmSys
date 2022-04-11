@@ -226,7 +226,7 @@ export default {
       if (!value) {
         callback(new Error("请输入手机号码"));
       } else {
-        if (/^1[3|4|5|6|7|8][0-9]{9}$/.test(value)) {
+        if (/^1[3|4|5|6|7|8|9][0-9]{9}$/.test(value)) {
           callback();
         } else {
           callback(new Error("请输入正确格式的手机号码"));
